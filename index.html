@@ -2,27 +2,39 @@
     <script>
         let playRoundCount = 0;
         function playRound() {
-            let userSelection = prompt('Please enter rock, paper or scissors.')    //prompt user to pick rock/paper/scissors for (userSelection)//
+            //prompt user to pick rock/paper/scissors for (userSelection)//
+            let userSelection = prompt('Please enter rock, paper or scissors.')
             userSelection = userSelection.toLowerCase()
             let computerSelection = 'rps'
 
+            //generate random number 0-2//
+            //assign 0=rock 1=paper 2=scissors//
+            //use generated R/P/S from number as (computerSelection)//
             function getComputerSelection() {
                 let randomNum = Math.floor(Math.random() * 3);
                 if (randomNum == 0) {
                     computerSelection = 'rock';
-                }
-                else if (randomNum == 1) {
+                } else if (randomNum == 1) {
                     computerSelection = 'paper';
-                }
-                else {
+                } else {
                     computerSelection = 'scissors';
                 }
             }
 
+
             getComputerSelection();
             ++playRoundCount;
-
-            function winLose() {
+            //if userSelection == rock && computerSelection == rock alert "it's a tie: you both rock!"//
+            //if userSelection == paper && computerSelection == paper alert "it's a tie: you both lose!"//
+            //if userSelection == scissors && computerSelection == scissors alert "it's a tie: you both lose!"//
+            //if userSelection == rock && computerSelection == paper alert "Paper covers rock, you lose!"//
+            //if userSelection == rock && computerSelection == scissors alert "Rock beats scissors, you win!"//
+            //if userSelection == paper && computerSelection == rock alert "Paper covers rock, you win!"//
+            //if userSelection == paper && computerSelection == scissors alert "Scissors cut paper, you lose!"//
+            //if userSelection == scissors && computerSelection == rock alert "Rock crushes scissors, you lose!"//
+            //if userSelection == scissors && computerSelection == paper alert "Scissors cut paper, you win!"//
+            //otherwise try again//
+            function winLoseDraw() {
                 if (userSelection === 'rock' && computerSelection === 'rock') {
                     alert("It's a tie: you both rock!");
                 } else if (userSelection === 'rock' && computerSelection === 'paper') {
@@ -54,7 +66,7 @@
 
 
             }
-            winLose()
+            winLoseDraw()
         }
         let playerScore = 0
         let computerScore = 0
@@ -84,19 +96,6 @@
             }
 
         }
-
-    //assign 0=rock 1=paper 2=scissors//
-    //generate random number 0-2//
-    //use generated R/P/S from number as (computerSelection)//
-    //if userSelection == rock && computerSelection == rock alert "it's a tie: you both rock!"//
-    //if userSelection == paper && computerSelection == paper alert "it's a tie: you both lose!"//
-    //if userSelection == scissors && computerSelection == scissors alert "it's a tie: you both lose!"//
-    //if userSelection == rock && computerSelection == paper alert "Paper covers rock, you lose!"//
-    //if userSelection == rock && computerSelection == scissors alert "Rock beats scissors, you win!"//
-    //if userSelection == paper && computerSelection == rock alert "Paper covers rock, you win!"//
-    //if userSelection == paper && computerSelection == scissors alert "Scissors cut paper, you lose!"//
-    //if userSelection == scissors && computerSelection == rock alert "Rock crushes scissors, you lose!"//
-    //if userSelection == scissors && computerSelection == paper alert "Scissors cut paper, you win!"//
 
 
 
