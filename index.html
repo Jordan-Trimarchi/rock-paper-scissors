@@ -1,5 +1,6 @@
 <body>
     <script>
+        alert ("Buckle up for 5 rounds of Rock Paper Scissors!")
         let playRoundCount = 0;
         function playRound() {
             //prompt user to pick rock/paper/scissors for (userSelection)//
@@ -68,8 +69,10 @@
             }
             winLoseDraw()
         }
+
         let playerScore = 0
         let computerScore = 0
+        //play 5 rounds and alert score after each//
         function playGame() {
             playRound()
             if (playRoundCount < 5) {
@@ -83,7 +86,7 @@
         }
 
         playGame()
-
+        //alert who won, and the final score//
         function winCondition() {
             if (playerScore > computerScore) {
                 alert("Congratulations, you win! After the final round, You have " + playerScore + " points, and The Computer has " + computerScore + ".");
